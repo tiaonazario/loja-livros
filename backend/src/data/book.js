@@ -3,7 +3,7 @@ import { openDB } from "../configDB.js";
 export async function createTable() {
   openDB().then((db) => {
     db.exec(
-      "CREATE TABLE IF NOT EXISTS Book (id INTEGER PRIMARY KEY, title TEXT, author TEXT, synopsis TEXT, cover TEXT, banner TEXT, price TEXT)"
+      "CREATE TABLE IF NOT EXISTS Book (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, synopsis TEXT, cover TEXT, banner TEXT, price TEXT)"
     );
   });
 }
