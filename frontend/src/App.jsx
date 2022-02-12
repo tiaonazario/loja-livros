@@ -1,5 +1,5 @@
+import { createGlobalStyle } from "styled-components";
 import Home from "./pages/Home";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   /* Resetar css */
