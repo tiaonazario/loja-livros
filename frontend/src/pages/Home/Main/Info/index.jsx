@@ -15,8 +15,8 @@ const InfoBox = styled.section`
   margin-left: auto;
   margin-right: auto;
   max-width: 700px;
-  border-top: 1px solid ${Palette.dimmed};
-  border-bottom: 1px solid ${Palette.dimmed};
+  border-top: 1px solid ${Palette.border};
+  border-bottom: 1px solid ${Palette.border};
   height: 60px;
   margin-top: 10px;
 

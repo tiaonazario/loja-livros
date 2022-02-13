@@ -3,7 +3,7 @@ import { openDB } from "../configDB.js";
 export async function createTable() {
   openDB().then((db) => {
     db.exec(
-      "CREATE TABLE IF NOT EXISTS Book (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, synopsis TEXT, cover TEXT, banner TEXT, price TEXT)"
+      "CREATE TABLE IF NOT EXISTS Book (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, category TEXT, synopsis TEXT, cover TEXT, banner TEXT, price REAL)"
     );
   });
 }
@@ -27,10 +27,11 @@ export async function insertBook(req, res) {
   let book = req.body;
   openDB().then((db) => {
     db.run(
-      "INSERT INTO Book (title, author, synopsis, cover, banner, price) VALUES (?, ?, ?, ?, ?, ?)",
+      "INSERT INTO Book (title, author, category, synopsis, cover, banner, price) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [
         book.title,
         book.author,
+        book.category,
         book.synopsis,
         book.cover,
         book.banner,
@@ -47,10 +48,11 @@ export async function updateBook(req, res) {
   let book = req.body;
   openDB().then((db) => {
     db.run(
-      "UPDATE Book SET title=?, author=?, synopsis=?, cover=?, banner=?, price=? WHERE id=?",
+      "UPDATE Book SET title=?, author=?, category=?, synopsis=?, cover=?, banner=?, price=? WHERE id=?",
       [
         book.title,
         book.author,
+        book.category,
         book.synopsis,
         book.cover,
         book.banner,

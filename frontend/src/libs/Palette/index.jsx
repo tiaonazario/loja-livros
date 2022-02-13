@@ -1,9 +1,10 @@
 const Palette = {
-  main: "#1c1c1c",
-  dimmed: "#313131",
-  bg_: "#64b6ac",
-  bg: "#c0fdfb",
-  highlight: "#D7DE99",
+  main: "#000000",
+  dimmed: "#5e5b5b",
+  bg: "#fdfcfc",
+  bg_: "#c0fdfb",
+  highlight: "#ee9b00",
+  border: "#ccc9c9",
 };
 
 export default Palette;

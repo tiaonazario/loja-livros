@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NewProduct from "../../../components/NewProduct";
 import Palette from "../../../libs/Palette";
 import Info from "./Info";
+import { useEffect, useState } from "react";
 
 const MainBox = styled.main`
   display: flex;
@@ -19,7 +20,7 @@ const MainBox = styled.main`
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    border-bottom: 1px solid ${Palette.main};
+    border-bottom: 1px solid ${Palette.border};
     a {
       font-size: 20px;
       padding: 5px 20px;
@@ -41,6 +42,22 @@ const MainBox = styled.main`
 `;
 
 function Main() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/books", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <MainBox>
@@ -56,16 +73,13 @@ function Main() {
 
         <span className="category-name">Produto em Destaque</span>
         <div className="items">
-          <NewProduct
-            img="https://images-na.ssl-images-amazon.com/images/I/41TsvI70n9L._SY344_BO1,204,203,200_QL70_ML2_.jpg"
-            title="Do Mil ao Milhão"
-            price={15.9}
-          />
-          <NewProduct
-            img="https://images-na.ssl-images-amazon.com/images/I/51VKbEh8uSL._SX356_BO1,204,203,200_.jpg"
-            title="Pai Rico Pai Pobre"
-            price={26.85}
-          />
+          {products.map((product) => (
+            <NewProduct
+              img={product.cover}
+              title={product.title}
+              price={product.price}
+            />
+          ))}
         </div>
       </MainBox>
     </>

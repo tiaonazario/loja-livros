@@ -30,6 +30,12 @@ const HeaderBox = styled.header`
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
+    p {
+      color: ${Palette.dimmed};
+      a {
+        cursor: pointer;
+      }
+    }
   }
 
   .social-networks {
@@ -54,7 +60,7 @@ const HeaderBox = styled.header`
 
   .search {
     display: flex;
-    border: 1px solid ${Palette.main};
+    border: 1px solid ${Palette.dimmed};
     align-items: center;
     background-color: ${Palette.bg};
     input {
@@ -64,6 +70,10 @@ const HeaderBox = styled.header`
     }
     svg {
       padding-right: 5px;
+    }
+    :hover {
+      transform: scale(1.2);
+      border: 1px solid ${Palette.highlight};
     }
   }
 
@@ -93,7 +103,9 @@ function Header() {
   return (
     <HeaderBox className="header">
       <section>
-        <span>Bem Vindo, Tião Nazário</span>
+        <p>
+          Bem Vindo, <a>Tião Nazário</a>
+        </p>
 
         <div className="social-networks">
           <a href="">
