@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import Header from "./Header";
+import Info from "./Info";
 
 const GlobalStyle = createGlobalStyle`
   h2 {
@@ -17,6 +18,7 @@ function Home() {
       <GlobalStyle />
 
       <Header />
+      <Info />
 
       <main></main>
 

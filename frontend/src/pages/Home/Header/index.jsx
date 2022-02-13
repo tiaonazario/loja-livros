@@ -21,52 +21,61 @@ const GlobalStyle = createGlobalStyle`
     padding: 10px 0;
     background: #d9e6f6;
     height: 120px;
+    
+    section {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1100px;
+    }
   }
-  .header section {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   .social-networks {
     display: flex;
+    a {
+      padding: 10px;
+    }
   }
-  .social-networks a {
-    padding: 10px;
-  }
+
   .top-menu {
     display: flex;
     align-items: center;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+    a span {
+      padding-left: 5px;
+    }
   }
-  .top-menu a {
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-  }
-  .top-menu a span {
-    padding-left: 5px;
-  }
+
   .search {
     display: flex;
     border: 1px solid black;
     align-items: center;
     background-color: #fff;
+    input {
+      border: none;
+      height: 25px;
+    }
+    svg {
+      padding-right: 5px;
+    }
   }
-  .search input {
-    border: none;
-    height: 25px;
-  }
-  .search svg {
-    padding-right: 5px;
-  }
+
   .shopping-cart {
     display: flex;
     align-items: center;
+    span {
+      padding-left: 10px;
+      font-size: 25px;
+    }
   }
-  .shopping-cart span {
-    padding-left: 10px;
-    font-size: 25px;
-  }
+
   .logo {
     font-size: 50px;
   }
