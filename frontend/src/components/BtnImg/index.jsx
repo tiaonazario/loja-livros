@@ -2,6 +2,12 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
   .BtnImg {
     cursor: pointer;
     display: flex;
@@ -10,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .text {
     padding-left: 10px;
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -22,8 +29,8 @@ function BtnImg(props) {
         {props.item}
 
         <div className="text">
-          <h2 className="title">{props.title}</h2>
-          <h3 className="subtitle">{props.subtitle}</h3>
+          <span className="title">{props.title}</span>
+          <span className="subtitle">{props.subtitle}</span>
         </div>
       </a>
     </>
