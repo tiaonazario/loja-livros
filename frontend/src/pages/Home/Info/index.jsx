@@ -9,8 +9,6 @@ import {
 
 const GlobalStyle = createGlobalStyle`
   .container {
-    position: relative;
-    top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     height: 60px;
+    margin-top: 10px;
   }
 `;
 

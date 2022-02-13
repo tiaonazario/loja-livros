@@ -2,22 +2,22 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  .title {
-    font-size: 20px;
-  }
-  .subtitle {
-    font-size: 14px;
-  }
   .BtnImg {
     cursor: pointer;
     display: flex;
     align-items: center;
     padding: 0 10px;
-  }
-  .text {
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
+    .title {
+      font-size: 20px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+    .text {
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
