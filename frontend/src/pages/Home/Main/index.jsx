@@ -1,23 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import NewProduct from "../../../components/NewProduct";
+import Palette from "../../../libs/Palette";
+import Info from "./Info";
 
-const MainContents = styled.main`
+const MainBox = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 1100px;
-  padding-top: 30px;
   .category {
+    padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    border-bottom: 1px solid #d9e6f6;
+    border-bottom: 1px solid ${Palette.main};
     a {
       font-size: 20px;
       padding: 5px 20px;
@@ -27,7 +29,7 @@ const MainContents = styled.main`
   .category-name {
     font-size: 20px;
     padding-top: 30px;
-    border-bottom: 1px solid #d9e6f6;
+    border-bottom: 1px solid ${Palette.main};
   }
 
   .items {
@@ -41,13 +43,15 @@ const MainContents = styled.main`
 function Main() {
   return (
     <>
-      <MainContents className="main">
+      <MainBox>
+        <Info />
+
         <nav className="category">
-          <a href="">Categoria 1</a>
-          <a href="">Categoria 2</a>
-          <a href="">Categoria 3</a>
-          <a href="">Categoria 4</a>
-          <a href="">Categoria 5</a>
+          <a href="">Romance</a>
+          <a href="">Educação Financeira</a>
+          <a href="">Ficção</a>
+          <a href="">Mangá</a>
+          <a href="">HQ</a>
         </nav>
 
         <span className="category-name">Produto em Destaque</span>
@@ -63,7 +67,7 @@ function Main() {
             price={26.85}
           />
         </div>
-      </MainContents>
+      </MainBox>
     </>
   );
 }

@@ -1,33 +1,36 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
-import BtnImg from "../../../components/BtnImg";
+import styled from "styled-components";
+import BtnImg from "../../../../components/BtnImg";
 import {
   IconCreditCard,
   IconDelivery,
   IconEconomy,
-} from "../../../libs/IconSVG/Others";
+} from "../../../../libs/IconSVG/Others";
+import Palette from "../../../../libs/Palette";
 
-const GlobalStyle = createGlobalStyle`
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 700px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 60px;
-    margin-top: 10px;
+const InfoBox = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  border-top: 1px solid ${Palette.dimmed};
+  border-bottom: 1px solid ${Palette.dimmed};
+  height: 60px;
+  margin-top: 10px;
+
+  .BtnImg {
+    padding: 0 25px;
   }
 `;
 
 function Info() {
   return (
     <>
-      <GlobalStyle />
-      <div className="container">
+      <InfoBox>
         <BtnImg
+          className="BtnImg"
           item={<IconDelivery size={50} />}
           title="Frete Grátis"
           subtitle="Acima de R$ 100"
@@ -44,7 +47,7 @@ function Info() {
           title="3x Sem Juros"
           subtitle="Ou até 12x no Cartão"
         />
-      </div>
+      </InfoBox>
     </>
   );
 }

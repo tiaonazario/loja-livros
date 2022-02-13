@@ -1,38 +1,35 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  .BtnImg {
-    cursor: pointer;
+const BtnImgBox = styled.a`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .text {
+    padding-left: 10px;
     display: flex;
-    align-items: center;
-    padding: 0 10px;
-    .title {
-      font-size: 20px;
-    }
-    .subtitle {
-      font-size: 14px;
-    }
-    .text {
-      padding-left: 10px;
-      display: flex;
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
 `;
 
 function BtnImg(props) {
   return (
     <>
-      <GlobalStyle />
-      <a className="BtnImg">
+      <BtnImgBox className="BtnImg">
         {props.item}
 
         <div className="text">
           <span className="title">{props.title}</span>
           <span className="subtitle">{props.subtitle}</span>
         </div>
-      </a>
+      </BtnImgBox>
     </>
   );
 }

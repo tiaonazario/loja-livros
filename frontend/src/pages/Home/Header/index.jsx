@@ -1,5 +1,4 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
 import BtnImg from "../../../components/BtnImg";
 import {
   IconMyOrder,
@@ -12,25 +11,25 @@ import {
   IconInstagram,
   IconTwiter,
 } from "../../../libs/IconSVG/SocialNetwork";
+import styled from "styled-components";
+import Palette from "../../../libs/Palette";
 
-const GlobalStyle = createGlobalStyle`
-  .header {
+const HeaderBox = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  background: ${Palette.bg_};
+  height: 120px;
+
+  section {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 10px 0;
-    background: #d9e6f6;
-    height: 120px;
-    
-    section {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1100px;
-    }
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
   }
 
   .social-networks {
@@ -55,15 +54,23 @@ const GlobalStyle = createGlobalStyle`
 
   .search {
     display: flex;
-    border: 1px solid black;
+    border: 1px solid ${Palette.main};
     align-items: center;
-    background-color: #fff;
+    background-color: ${Palette.bg};
     input {
+      background-color: ${Palette.bg};
       border: none;
       height: 25px;
     }
     svg {
       padding-right: 5px;
+    }
+  }
+
+  .BtnImg {
+    color: ${Palette.main};
+    :hover {
+      color: ${Palette.highlight};
     }
   }
 
@@ -78,13 +85,13 @@ const GlobalStyle = createGlobalStyle`
 
   .logo {
     font-size: 50px;
+    color: ${Palette.main};
   }
 `;
 
 function Header() {
   return (
-    <header className="header">
-      <GlobalStyle />
+    <HeaderBox className="header">
       <section>
         <span>Bem Vindo, Tião Nazário</span>
 
@@ -122,6 +129,7 @@ function Header() {
         <span className="logo">TN Store</span>
 
         <BtnImg
+          className="BtnImg"
           item={
             <div className="shopping-cart">
               <IconShoppingCart size={40} />
@@ -132,7 +140,7 @@ function Header() {
           subtitle="Produtos Adicionados"
         />
       </section>
-    </header>
+    </HeaderBox>
   );
 }
 

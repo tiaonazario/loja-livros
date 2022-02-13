@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import Palette from "./libs/Palette";
 import Home from "./pages/Home";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    background-color: ${Palette.bg};
     font-family: sans-serif;
-    background-color: #FFFFFF;
   }
 
   img {
@@ -28,7 +29,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: black;
+    color: ${Palette.dimmed};
+  }
+  a:hover {
+    color: ${Palette.highlight};
+    transform: scale(1.2)
   }
 `;
 
